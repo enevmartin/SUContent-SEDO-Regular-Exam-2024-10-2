@@ -1,18 +1,28 @@
 pipeline {
-    agent any
+    agent any 
 
     stages {
         stage('Build') {
             steps {
-                // Build the .NET 6 application
-                sh 'dotnet build --configuration Release'
+                script {
+                    echo 'Building the application...'
+                    // Replace with your build command, for .NET 6
+                    sh 'dotnet build --configuration Release'
+                }
             }
         }
-        stage('Run Tests') {
+        stage('Test') {
             steps {
-                // Run all tests (unit and integration)
-                sh 'dotnet test --no-build --configuration Release'
+                script {
+                    echo 'Running tests...'
+                    // Replace with your test command
+                    sh 'dotnet test --no-build --configuration Release'
+                }
             }
         }
+    }
+    triggers {
+        // Uncomment if you want to poll SCM every 5 minutes
+        // pollSCM('H/5 * * * *') 
     }
 }
