@@ -20,5 +20,5 @@ pipeline {
                 }
             }
         }
-    
-}
+    } // Closing brace for stages
+} // Closing brace for pipeline
