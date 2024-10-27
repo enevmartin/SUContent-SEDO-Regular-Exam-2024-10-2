@@ -20,9 +20,5 @@ pipeline {
                 }
             }
         }
-    }
-    triggers {
-        // Uncomment if you want to poll SCM every 5 minutes
-        // pollSCM('H/5 * * * *') 
-    }
+    
 }
